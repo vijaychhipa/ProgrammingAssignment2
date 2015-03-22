@@ -1,7 +1,9 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## This function takes an invertible square matrix as an argument and augments it with 
+## new function, specifically get(), set(), getInverse() and setInverse()
+## are added. 
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -17,15 +19,13 @@ makeCacheMatrix <- function(x = matrix()) {
   getInverse <- mi  
 }
 
-
-## Write a short comment describing this function
-## it takes a invertible square matrix as an argument and
+## This function takes a invertible square matrix as an argument and
 ## if it inverted this matrix before it returns the cached matrix
 ## else it copmutes the inverse and returns the inverse.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inverse <- x$getInverse()
-  if (!is.null( inverse )) {
+  if (x == x$get() & !is.null( inverse )) {
     message("Getting the cached data")
     return (inverse)
   }
